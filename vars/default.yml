@@ -1,0 +1,84 @@
+---
+ntp_daemon_map:
+  CentOS:
+    "7": "ntpd"
+    "8": "chronyd"
+    "9": "chronyd"
+  RedHat:
+    "7": "ntpd"
+    "8": "chronyd"
+    "9": "chronyd"
+  Fedora: "chronyd"
+  Rocky:
+    "8": "chronyd"
+  AlmaLinux:
+    "8": "chronyd"
+  Amazon:
+    "2": "ntpd"
+  Debian: "ntp"
+  Ubuntu: "ntp"
+
+ntp_daemon: "{{ ntp_daemon_map[ansible_distribution][ansible_distribution_major_version] | default(ntp_daemon_map[ansible_distribution]) }}"
+
+ntp_package_map:
+  CentOS:
+    "7": "ntp"
+    "8": "chrony"
+    "9": "chrony"
+  RedHat:
+    "7": "ntp"
+    "8": "chrony"
+    "9": "chrony"
+  Fedora: "chrony"
+  Rocky:
+    "8": "chrony"
+  AlmaLinux:
+    "8": "chrony"
+  Amazon:
+    "2": "ntp"
+  Debian: "ntp"
+  Ubuntu: "ntp"
+
+ntp_package: "{{ ntp_package_map[ansible_distribution][ansible_distribution_major_version] | default(ntp_package_map[ansible_distribution]) }}"
+
+ntp_config_template_map:
+  CentOS:
+    "7": "ntp.conf.j2"
+    "8": "chrony.conf.j2"
+    "9": "chrony.conf.j2"
+  RedHat:
+    "7": "ntp.conf.j2"
+    "8": "chrony.conf.j2"
+    "9": "chrony.conf.j2"
+  Fedora: "chrony.conf.j2"
+  Rocky:
+    "8": "chrony.conf.j2"
+  AlmaLinux:
+    "8": "chrony.conf.j2"
+  Amazon:
+    "2": "ntp.conf.j2"
+  Debian: "ntp.conf.j2"
+  Ubuntu: "ntp.conf.j2"
+
+ntp_config_template: "{{ ntp_config_template_map[ansible_distribution][ansible_distribution_major_version] | default(ntp_config_template_map[ansible_distribution]) }}"
+
+ntp_config_dest_map:
+  CentOS:
+    "7": "/etc/ntp.conf"
+    "8": "/etc/chrony.conf"
+    "9": "/etc/chrony.conf"
+  RedHat:
+    "7": "/etc/ntp.conf"
+    "8": "/etc/chrony.conf"
+    "9": "/etc/chrony.conf"
+  Fedora: "/etc/chrony.conf"
+  Rocky:
+    "8": "/etc/chrony.conf"
+  AlmaLinux:
+    "8": "/etc/chrony.conf"
+  Amazon:
+    "2": "/etc/ntp.conf"
+  Debian: "/etc/ntp.conf"
+  Ubuntu: "/etc/ntp.conf"
+
+ntp_config_dest: "{{ ntp_config_dest_map[ansible_distribution][ansible_distribution_major_version] | default(ntp_config_dest_map[ansible_distribution]) }}"

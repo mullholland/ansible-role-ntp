@@ -1,0 +1,29 @@
+---
+- name: Include distribution specific variables
+  include_vars: "{{ item }}"
+  with_first_found:
+    - '{{ ansible_distribution }}-{{ ansible_distribution_major_version }}.yml'
+    - '{{ ansible_distribution }}.yml'
+    - '{{ ansible_os_family }}.yml'
+    - '{{ ansible_system }}.yml'
+    - 'default.yml'
+
+- name: install ntp packages
+  ansible.builtin.package:
+    name: "{{ ntp_package }}"
+    state: present
+
+- name: Generate ntp.conf file
+  ansible.builtin.template:
+    src: "{{ ntp_config_template }}"
+    dest: "{{ ntp_config_dest }}"
+    owner: root
+    group: root
+    mode: '0644'
+  notify: restart ntp
+
+- name: Manage ntp daemon
+  service:
+    name: "{{ ntp_daemon }}"
+    state: started
+    enabled: true
