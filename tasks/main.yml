@@ -25,5 +25,5 @@
 - name: Manage ntp daemon
   service:
     name: "{{ ntp_daemon }}"
-    state: started
-    enabled: true
+    state: "{{ ntp_state }}"
+    enabled: "{{ ntp_enabled }}"
