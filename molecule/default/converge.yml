@@ -6,7 +6,7 @@
   vars:
     # Molecule tests sometime fail with chronyd in the container
     # so we disable it for testing
-    ntp_state: stopped
-    ntp_enabled: false
+    ntp_state: "stopped"
+    ntp_enabled: "false"
   roles:
     - role: "ansible-role-ntp"

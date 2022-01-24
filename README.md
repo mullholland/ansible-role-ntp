@@ -35,8 +35,8 @@ This example is taken from `molecule/default/converge.yml` and is tested on each
   vars:
     # Molecule tests sometime fail with chronyd in the container
     # so we disable it for testing
-    ntp_state: stopped
-    ntp_enabled: false
+    ntp_state: "stopped"
+    ntp_enabled: "false"
   roles:
     - role: "mullholland.ntp"
 ```
