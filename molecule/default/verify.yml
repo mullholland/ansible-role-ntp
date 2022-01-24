@@ -87,7 +87,8 @@
       Ubuntu: "/etc/ntp.conf"
 
     ntp_config_dest: "{{ ntp_config_dest_map[ansible_distribution][ansible_distribution_major_version] | default(ntp_config_dest_map[ansible_distribution]) }}"
-
+    ntp_state: stopped
+    ntp_enabled: false
   tasks:
     - name: SmokeTests
       debug:
@@ -120,8 +121,8 @@
     - name: check ntp daemon
       service:
         name: "{{ ntp_daemon }}"
-        state: started
-        enabled: true
+        state: "{{ ntp_state }}"
+        enabled: "{{ ntp_enabled }}"
       check_mode: true
       register: molecule_service
       failed_when: (molecule_service is changed) or (molecule_service is failed)

@@ -16,6 +16,10 @@ ntp_servers:
  - 1.de.pool.ntp.org iburst
  - 2.de.pool.ntp.org iburst
  - 3.de.pool.ntp.org iburst
+
+# Manage the ntp/chronyd daemon
+ntp_state: started
+ntp_enabled: true
 ```
 
 
@@ -28,8 +32,11 @@ This example is taken from `molecule/default/converge.yml` and is tested on each
   hosts: all
   become: true
   gather_facts: true
-  # vars:
-  #   example_var: "value"
+  vars:
+    # Molecule tests sometime fail with chronyd in the container
+    # so we disable it for testing
+    ntp_state: "stopped"
+    ntp_enabled: "false"
   roles:
     - role: "mullholland.ntp"
 ```

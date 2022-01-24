@@ -23,7 +23,7 @@
   notify: restart ntp
 
 - name: Manage ntp daemon
-  service:
+  ansible.builtin.service:
     name: "{{ ntp_daemon }}"
-    state: started
-    enabled: true
+    state: "{{ ntp_state }}"
+    enabled: "{{ ntp_enabled }}"
