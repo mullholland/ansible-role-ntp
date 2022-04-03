@@ -1,0 +1,11 @@
+---
+- name: Prepare
+  hosts: all
+  become: true
+  gather_facts: true
+
+  tasks:
+    - name: Debian/Ubuntu | Install cron for Backupscript
+      ansible.builtin.apt:
+        update_cache: true
+      when: ansible_os_family == "Debian"
