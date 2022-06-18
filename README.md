@@ -41,21 +41,6 @@ This example is taken from `molecule/default/converge.yml` and is tested on each
     - role: "mullholland.ntp"
 ```
 
-The machine needs to be prepared in CI this is done using `molecule/default/prepare.yml`:
-```yaml
----
-- name: Prepare
-  hosts: all
-  become: true
-  gather_facts: true
-
-  tasks:
-    - name: Debian/Ubuntu | Install cron for Backupscript
-      ansible.builtin.apt:
-        update_cache: true
-      when: ansible_os_family == "Debian"
-```
-
 
 
 
@@ -73,7 +58,6 @@ This role has been tested on these [container images](https://hub.docker.com/u/m
 -   [centos7](https://hub.docker.com/r/mullholland/docker-molecule-centos7)
 -   [centos-stream8](https://hub.docker.com/r/mullholland/docker-molecule-centos-stream8)
 -   [centos-stream9](https://hub.docker.com/r/mullholland/docker-molecule-centos-stream9)
--   [fedora34](https://hub.docker.com/r/mullholland/docker-molecule-fedora34)
 -   [fedora35](https://hub.docker.com/r/mullholland/docker-molecule-fedora35)
 -   [fedora36](https://hub.docker.com/r/mullholland/docker-molecule-fedora36)
 -   [amazonlinux](https://hub.docker.com/r/mullholland/docker-molecule-amazonlinux)
