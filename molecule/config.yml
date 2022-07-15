@@ -4,7 +4,7 @@ molecule_exceptions:
     reason: "No chrony/ntp package in default repositories"
 molecule_scenarios:
   - scenario: "default"
-    ansible: ["previous", "current", "development"]
+    ansible: ["previous", "current"]
     platforms:
       - "debian9"
       - "debian10"
