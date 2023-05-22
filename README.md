@@ -1,5 +1,10 @@
 # [ntp](#ntp)
 
+**IMPORTANT**
+This role will no longer be updated. you can use [robertdebock/ansible-role-ntp](https://github.com/robertdebock/ansible-role-ntp) as an alternative.
+
+---
+
 |GitHub|GitLab|
 |------|------|
 |[![github](https://github.com/mullholland/ansible-role-ntp/workflows/Ansible%20Molecule/badge.svg)](https://github.com/mullholland/ansible-role-ntp/actions)|[![gitlab](https://gitlab.com/mullholland/ansible-role-ntp/badges/main/pipeline.svg)](https://gitlab.com/mullholland/ansible-role-ntp)|
