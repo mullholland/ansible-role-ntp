@@ -1,0 +1,8 @@
+---
+#
+# Ansible managed
+#
+repository:
+  description: Installs and configures the ntp/chrony daemon.
+  homepage: https://mullholland.net
+  topics: development, monitoring, networking, system, ansible, molecule, tox, playbook
