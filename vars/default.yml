@@ -15,7 +15,11 @@ ntp_daemon_map:
     "8": "chronyd"
   Amazon:
     "2": "ntpd"
-  Debian: "ntp"
+  Debian:
+    "9": "ntp"
+    "10": "ntp"
+    "11": "ntp"
+    "12": "chrony"
   Ubuntu: "ntp"
 
 ntp_daemon: "{{ ntp_daemon_map[ansible_distribution][ansible_distribution_major_version] | default(ntp_daemon_map[ansible_distribution]) }}"
@@ -36,7 +40,12 @@ ntp_package_map:
     "8": "chrony"
   Amazon:
     "2": "ntp"
-  Debian: "ntp"
+  Debian:
+    "9": "ntp"
+    "10": "ntp"
+    "11": "ntp"
+    "12": "chrony"
+
   Ubuntu: "ntp"
 
 ntp_package: "{{ ntp_package_map[ansible_distribution][ansible_distribution_major_version] | default(ntp_package_map[ansible_distribution]) }}"
@@ -57,7 +66,11 @@ ntp_config_template_map:
     "8": "chrony.conf.j2"
   Amazon:
     "2": "ntp.conf.j2"
-  Debian: "ntp.conf.j2"
+  Debian:
+    "9": "ntp.conf.j2"
+    "10": "ntp.conf.j2"
+    "11": "ntp.conf.j2"
+    "12": "chrony.conf.j2"
   Ubuntu: "ntp.conf.j2"
 
 ntp_config_template: "{{ ntp_config_template_map[ansible_distribution][ansible_distribution_major_version] | default(ntp_config_template_map[ansible_distribution]) }}"
@@ -78,7 +91,11 @@ ntp_config_dest_map:
     "8": "/etc/chrony.conf"
   Amazon:
     "2": "/etc/ntp.conf"
-  Debian: "/etc/ntp.conf"
+  Debian:
+    "9": "/etc/ntp.conf"
+    "10": "/etc/ntp.conf"
+    "11": "/etc/ntp.conf"
+    "12": "/etc/chrony.conf"
   Ubuntu: "/etc/ntp.conf"
 
 ntp_config_dest: "{{ ntp_config_dest_map[ansible_distribution][ansible_distribution_major_version] | default(ntp_config_dest_map[ansible_distribution]) }}"
