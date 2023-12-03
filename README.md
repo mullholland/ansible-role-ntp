@@ -4,7 +4,7 @@ Installs and configures the ntp/chrony daemon.
 
 |GitHub|Downloads|Version|
 |------|---------|-------|
-|[![github](https://github.com/mullholland/ansible-role-ntp/actions/workflows/molecule.yml/badge.svg)](https://github.com/mullholland/ansible-role-ntp/actions/workflows/molecule.yml)|[![downloads](https://img.shields.io/ansible/role/d/)](https://galaxy.ansible.com/mullholland/ntp)|[![Version](https://img.shields.io/github/release/mullholland/ansible-role-ntp.svg)](https://github.com/mullholland/ansible-role-ntp/releases/)|
+|[![github](https://github.com/mullholland/ansible-role-ntp/actions/workflows/molecule.yml/badge.svg)](https://github.com/mullholland/ansible-role-ntp/actions/workflows/molecule.yml)|[![downloads](https://img.shields.io/ansible/role/d/mullholland/ntp)](https://galaxy.ansible.com/mullholland/ntp)|[![Version](https://img.shields.io/github/release/mullholland/ansible-role-ntp.svg)](https://github.com/mullholland/ansible-role-ntp/releases/)|
 ## [Example Playbook](#example-playbook)
 
 This example is taken from [`molecule/default/converge.yml`](https://github.com/mullholland/ansible-role-ntp/blob/master/molecule/default/converge.yml) and is tested on each push, pull request and release.
