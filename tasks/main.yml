@@ -8,7 +8,7 @@
     - '{{ ansible_system }}.yml'
     - 'default.yml'
 
-- name: install ntp packages
+- name: Install ntp packages
   ansible.builtin.package:
     name: "{{ ntp_package }}"
     state: present
@@ -20,7 +20,7 @@
     owner: root
     group: root
     mode: '0644'
-  notify: restart ntp
+  notify: Restart ntp
 
 - name: Manage ntp daemon
   ansible.builtin.service:

@@ -1,7 +1,6 @@
 ---
 - name: Converge
   hosts: all
-  become: true
   gather_facts: true
   vars:
     # Molecule tests sometime fail with chronyd in the container
@@ -9,4 +8,4 @@
     ntp_state: "stopped"
     ntp_enabled: "false"
   roles:
-    - role: "ansible-role-ntp"
+    - role: "{{ lookup('env', 'MOLECULE_PROJECT_DIRECTORY') }}"
