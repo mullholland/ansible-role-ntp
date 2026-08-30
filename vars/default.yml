@@ -104,22 +104,30 @@ ntp_config_dest_map:
     "7": "/etc/ntp.conf"
     "8": "/etc/chrony.conf"
     "9": "/etc/chrony.conf"
+    "10": "/etc/chrony.conf"
   RedHat:
     "7": "/etc/ntp.conf"
     "8": "/etc/chrony.conf"
     "9": "/etc/chrony.conf"
+    "10": "/etc/chrony.conf"
   Fedora: "/etc/chrony.conf"
   Rocky:
     "8": "/etc/chrony.conf"
+    "9": "/etc/chrony.conf"
+    "10": "/etc/chrony.conf"
   AlmaLinux:
     "8": "/etc/chrony.conf"
+    "9": "/etc/chrony.conf"
+    "10": "/etc/chrony.conf"
   Amazon:
     "2": "/etc/ntp.conf"
+    "2023": "/etc/chrony.conf"
   Debian:
     "9": "/etc/ntp.conf"
     "10": "/etc/ntp.conf"
     "11": "/etc/ntp.conf"
     "12": "/etc/chrony.conf"
+    "13": "/etc/chrony.conf"
   Ubuntu: "/etc/ntp.conf"
 
 ntp_config_dest: "{{ ntp_config_dest_map[ansible_distribution][ansible_distribution_major_version] | default(ntp_config_dest_map[ansible_distribution]) }}"
