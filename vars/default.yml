@@ -4,22 +4,30 @@ ntp_daemon_map:
     "7": "ntpd"
     "8": "chronyd"
     "9": "chronyd"
+    "10": "chronyd"
   RedHat:
     "7": "ntpd"
     "8": "chronyd"
     "9": "chronyd"
+    "10": "chronyd"
   Fedora: "chronyd"
   Rocky:
     "8": "chronyd"
+    "9": "chronyd"
+    "10": "chronyd"
   AlmaLinux:
     "8": "chronyd"
+    "9": "chronyd"
+    "10": "chronyd"
   Amazon:
     "2": "ntpd"
+    "2023": "chronyd"
   Debian:
     "9": "ntp"
     "10": "ntp"
     "11": "ntp"
     "12": "chrony"
+    "13": "chrony"
   Ubuntu: "ntp"
 
 ntp_daemon: "{{ ntp_daemon_map[ansible_distribution][ansible_distribution_major_version] | default(ntp_daemon_map[ansible_distribution]) }}"
@@ -29,22 +37,30 @@ ntp_package_map:
     "7": "ntp"
     "8": "chrony"
     "9": "chrony"
+    "10": "chrony"
   RedHat:
     "7": "ntp"
     "8": "chrony"
     "9": "chrony"
+    "10": "chrony"
   Fedora: "chrony"
   Rocky:
     "8": "chrony"
+    "9": "chrony"
+    "10": "chrony"
   AlmaLinux:
     "8": "chrony"
+    "9": "chrony"
+    "10": "chrony"
   Amazon:
     "2": "ntp"
+    "2023": "chrony"
   Debian:
     "9": "ntp"
     "10": "ntp"
     "11": "ntp"
     "12": "chrony"
+    "13": "chrony"
 
   Ubuntu: "ntp"
 
@@ -55,22 +71,30 @@ ntp_config_template_map:
     "7": "ntp.conf.j2"
     "8": "chrony.conf.j2"
     "9": "chrony.conf.j2"
+    "10": "chrony.conf.j2"
   RedHat:
     "7": "ntp.conf.j2"
     "8": "chrony.conf.j2"
     "9": "chrony.conf.j2"
+    "10": "chrony.conf.j2"
   Fedora: "chrony.conf.j2"
   Rocky:
     "8": "chrony.conf.j2"
+    "9": "chrony.conf.j2"
+    "10": "chrony.conf.j2"
   AlmaLinux:
     "8": "chrony.conf.j2"
+    "9": "chrony.conf.j2"
+    "10": "chrony.conf.j2"
   Amazon:
     "2": "ntp.conf.j2"
+    "2023": "chrony.conf.j2"
   Debian:
     "9": "ntp.conf.j2"
     "10": "ntp.conf.j2"
     "11": "ntp.conf.j2"
     "12": "chrony.conf.j2"
+    "13": "chrony.conf.j2"
   Ubuntu: "ntp.conf.j2"
 
 ntp_config_template: "{{ ntp_config_template_map[ansible_distribution][ansible_distribution_major_version] | default(ntp_config_template_map[ansible_distribution]) }}"
