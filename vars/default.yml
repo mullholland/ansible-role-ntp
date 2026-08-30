@@ -28,7 +28,10 @@ ntp_daemon_map:
     "11": "ntp"
     "12": "chrony"
     "13": "chrony"
-  Ubuntu: "ntp"
+  Ubuntu:
+    "22": "ntp"
+    "24": "ntpsec"
+    "26": "ntpsec"
 
 ntp_daemon: "{{ ntp_daemon_map[ansible_distribution][ansible_distribution_major_version] | default(ntp_daemon_map[ansible_distribution]) }}"
 
@@ -62,7 +65,10 @@ ntp_package_map:
     "12": "chrony"
     "13": "chrony"
 
-  Ubuntu: "ntp"
+  Ubuntu:
+    "22": "ntp"
+    "24": "ntpsec"
+    "26": "ntpsec"
 
 ntp_package: "{{ ntp_package_map[ansible_distribution][ansible_distribution_major_version] | default(ntp_package_map[ansible_distribution]) }}"
 
@@ -128,6 +134,9 @@ ntp_config_dest_map:
     "11": "/etc/ntp.conf"
     "12": "/etc/chrony.conf"
     "13": "/etc/chrony.conf"
-  Ubuntu: "/etc/ntp.conf"
+  Ubuntu:
+    "22": "/etc/ntp.conf"
+    "24": "/etc/ntpsec/ntp.conf"
+    "26": "/etc/ntpsec/ntp.conf"
 
 ntp_config_dest: "{{ ntp_config_dest_map[ansible_distribution][ansible_distribution_major_version] | default(ntp_config_dest_map[ansible_distribution]) }}"
